@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.KL.lift_note"
+    namespace = "com.example.lift_note"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 

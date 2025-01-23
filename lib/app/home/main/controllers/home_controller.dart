@@ -3,6 +3,7 @@ import 'dart:async';
 import 'dart:isolate';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_util_code/utils.dart';
 import 'package:get/get.dart';
 
 import 'package:pull_to_refresh/pull_to_refresh.dart';
@@ -76,7 +77,10 @@ class HomeController extends GetxController{
       homeViewModel.newsList.addAll(res);
       update();
       isLoadMore ? refreshController.loadComplete() : refreshController.refreshCompleted();
-    } catch (err) { debugPrint('获取新闻列表失败: $err'); }
+    } catch (err) { 
+      refreshController.refreshCompleted();
+      debugPrint('获取新闻列表失败: $err'); 
+    }
   }
 
   //MARK: 业务逻辑点击
@@ -89,6 +93,49 @@ class HomeController extends GetxController{
         debugPrint('点击了$index');
         break;
     }
+  }
+
+  void ToChatVC() async {
+    //在这里弹框： --是发起方还是接收方？
+    // String deviceId = await DeviceUtils.getDeviceId();
+    String deviceId = '111';
+    String connectId = deviceId + '123';
+    Get.dialog(
+      AlertDialog(
+        title: const Text('请选择'),
+        content: const Text('请选择您是发起方还是接收方'),
+        actions: [
+          TextButton(
+            onPressed: () {
+              Get.back();
+              Get.toNamed(
+                Routes.HOME_CHAT,
+                arguments: {
+                  'uid' : deviceId,
+                  'to' : connectId
+                }
+              );
+            },
+            child: const Text('发起方'),
+          ),
+          TextButton(
+           onPressed: () {
+            
+            Get.back();
+            Get.toNamed(
+              Routes.HOME_CHAT,
+              arguments: {
+                'uid' : connectId,
+                'to' : deviceId
+              }
+            );
+           },
+           child: const Text('接收方'),
+          )
+        ]
+      )
+    );
+    
   }
 
   //MARK: Notification

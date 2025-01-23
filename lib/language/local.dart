@@ -18,6 +18,8 @@ class LocalShowKeys {
 
   static const String search = 'search';
 
+  static const String send = 'send';
+
 }
 
 //隐私版面文案
@@ -69,4 +71,10 @@ class HomePokedexDetailShowKeys {
   static const String eggGroup = 'eggGroup';
 
   static const String eggCycle = 'eggCycle';
+}
+
+//首页 -- 聊天文案
+class HomeChatShowKeys {
+  static const String chatHint = 'chatHint';
+
 }

@@ -15,6 +15,7 @@ class Message extends Translations {
           LocalShowKeys.application : 'LifeNote',
           LocalShowKeys.note : 'Note',
           LocalShowKeys.search : 'Search',
+          LocalShowKeys.send : 'send',
 
           //首页文案
           HomeShowKeys.questionTitle : 'What Pokemon are you looking for?',
@@ -36,6 +37,9 @@ class Message extends Translations {
           HomePokedexDetailShowKeys.evolution : 'Evolution',
           HomePokedexDetailShowKeys.movies : 'Movies',
           HomePokedexDetailShowKeys.breeding : 'Breeding',
+
+          //首页 -- 聊天文案
+          HomeChatShowKeys.chatHint : 'Talk'
           
         },
         'zh_CN': {
@@ -48,6 +52,7 @@ class Message extends Translations {
           LocalShowKeys.application : '生活好记本',
           LocalShowKeys.note : '记账',
           LocalShowKeys.search : '搜索',
+          LocalShowKeys.send : '发送',
 
           //首页文案
           HomeShowKeys.questionTitle : '你正在寻找什么宝可梦?',
@@ -69,6 +74,9 @@ class Message extends Translations {
           HomePokedexDetailShowKeys.evolution : '进化',
           HomePokedexDetailShowKeys.movies : '电影',
           HomePokedexDetailShowKeys.breeding : '物种',
+
+          //首页 -- 聊天文案
+          HomeChatShowKeys.chatHint : '聊一聊'
         }
       };
 }

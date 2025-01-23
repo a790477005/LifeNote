@@ -79,7 +79,7 @@ class HomeView extends GetView<HomeController> {
                                               )),
                                           onTap: () {
                                             //查看全部
-                                            debugPrint('查看全部');
+                                            controller.ToChatVC();
                                           },
                                         )
                                       ],

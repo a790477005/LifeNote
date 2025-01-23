@@ -10,6 +10,9 @@ import '../app/home/pokedex/views/home_pokedex_view.dart';
 //-- home -- pokedex -- detail
 import '../app/home/detail/bindings/home_pokedex_detail_binding.dart';
 import '../app/home/detail/views/home_pokedex_detail_view.dart';
+//-- home -- chat
+import '../app/home/chat/views/home_chat_view.dart';
+import '../app/home/chat/bindings/home_chat_binding.dart';
 
 //tab
 import '../app/tabs/views/tabs_view.dart';
@@ -49,6 +52,13 @@ abstract class AppPages {
       name: _Paths.HOME, 
       page: () => const HomeView(),
       binding: HomeBinding()
+    ),
+
+    //HOME_CHAT
+    GetPage(
+      name: _Paths.HOME_CHAT, 
+      page: () => const HomeChatView(),
+      binding: HomeChatBinding()
     ),
 
     //HOME_POKEDEX

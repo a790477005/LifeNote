@@ -26,6 +26,8 @@ abstract class Routes {
   static const HOME_POKEDEX = _Paths.HOME_POKEDEX;
 
   static const HOME_POKEDEX_DETAIL = _Paths.HOME_POKEDEX_DETAIL;
+
+  static const HOME_CHAT = _Paths.HOME_CHAT;
 }
 
 abstract class _Paths {
@@ -51,4 +53,6 @@ abstract class _Paths {
   static const HOME_POKEDEX = '/home-pokedex';
 
   static const HOME_POKEDEX_DETAIL = '/home-pokedex-detail';
+
+  static const HOME_CHAT = '/home-chat';
 }
