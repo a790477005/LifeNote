@@ -1,4 +1,6 @@
 
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -21,6 +23,22 @@ class HomeViewModel {
       List<HomeNewsListModelEntity> newsList = res.map((item) => HomeNewsListModelEntity.fromJson(item)).toList();
       return newsList;
     } catch (e) {
+      return Future.error(e);
+    }
+  }
+
+  static Future<String> getAndBindChatInfo({required String webId}) async {
+    try {
+      var res = await Request.post(
+        Api.getAndBindChatInfo,
+        data:  {
+          "webIp": webId
+        },      
+      );
+
+      Data model = Data.fromJson(res);
+      return model.uid!;
+    } catch(e) {
       return Future.error(e);
     }
   }

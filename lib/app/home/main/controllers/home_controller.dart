@@ -3,7 +3,6 @@ import 'dart:async';
 import 'dart:isolate';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_util_code/utils.dart';
 import 'package:get/get.dart';
 
 import 'package:pull_to_refresh/pull_to_refresh.dart';
@@ -119,13 +118,16 @@ class HomeController extends GetxController{
             child: const Text('发起方'),
           ),
           TextButton(
-           onPressed: () {
+           onPressed: () async {
             
             Get.back();
+
+            var connectUid = await HomeViewModel.getAndBindChatInfo(webId: deviceId);
+
             Get.toNamed(
               Routes.HOME_CHAT,
               arguments: {
-                'uid' : connectId,
+                'uid' : connectUid,
                 'to' : deviceId
               }
             );

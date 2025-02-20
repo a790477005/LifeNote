@@ -193,22 +193,25 @@ class HomeView extends GetView<HomeController> {
                       ),
                       Expanded(
                           child: Padding(
-                        padding: const EdgeInsets.only(left: 13),
-                        child: TextField(
-                          cursorColor: color_303943,
-                          controller: controller.searchVC,
-                          decoration: InputDecoration(
-                            hintText: HomeShowKeys.searchPlaceholder.tr,
-                            hintStyle: TextStyle(
-                              color: color_303943,
-                              fontSize: LScreenAdapter.fontSize(14),
+                          padding: const EdgeInsets.only(left: 13),
+                          child: Container(
+                            height: LScreenAdapter.height(20),
+                            child: TextField(
+                            cursorColor: color_303943,
+                            controller: controller.searchVC,
+                            decoration: InputDecoration(
+                              hintText: HomeShowKeys.searchPlaceholder.tr,
+                              hintStyle: TextStyle(
+                                color: color_303943,
+                                fontSize: LScreenAdapter.fontSize(14),
+                              ),
+                              border: InputBorder.none,
                             ),
-                            border: InputBorder.none,
-                          ),
-                          onSubmitted: (value) {
-                            LogUtils.println(value);
-                          },
+                            onSubmitted: (value) {
+                              LogUtils.println(value);
+                            },
                         ),
+                          ),
                       ))
                     ],
                   ),

@@ -103,7 +103,7 @@ class HomeChatController extends GetxController{
 
         String? msg = HomeChatViewModel.handleActionValue(message);
         if (msg != null && msg != '') {
-          _insetMsg(role: 0, value: msg);
+          _insetMsg(role: 1, value: msg);
         }
       }
     );
